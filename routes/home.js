@@ -1,20 +1,20 @@
  const express = require("express");
-// const {
-//     removeBook,
-//     viewBook,
-//     updateBook,
-//     homeDummy,
-//     getBookList,
-//     addBookList,
-//     issueBook,
-//     returnBook,
-//     getIssueListt
-// } = require("../controller/homeController");
+const {
+    // removeBook,
+    // viewBook,
+    // updateBook,
+    homeDummy,
+    // getBookList,
+    // addBookList,
+    // issueBook,
+    // returnBook,
+    // getIssueListt
+} = require("../controller/homeController");
 // const {isLoggedIn, customRole} = require("../middlewares/user");
 
 const router = express.Router();
 
-//router.route("/").get(homeDummy);
+router.route("/").get(homeDummy);
 // router.route("/userdashboard").get(isLoggedIn, getBookList);
 
 // router.route("/admin/addbooks").post(isLoggedIn, customRole("admin"), addBookList);
