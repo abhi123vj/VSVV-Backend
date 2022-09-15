@@ -10,12 +10,10 @@ const YAML = require("yamljs");
 const swaggerDocument = YAML.load("./swagger.yaml");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.get("/", (req, res, next) => {
-    res.json(["Tony","Lisa","Michael","Ginger","Food"]);
-   });
-// regular middleware
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+
+// // regular middleware
+// app.use(express.json());
+// app.use(express.urlencoded({extended: true}));
 
 // // cookies and file middleware
 // app.use(cookieParser());
