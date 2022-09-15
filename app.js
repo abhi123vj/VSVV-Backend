@@ -15,10 +15,10 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// // cookies and file middleware
-// app.use(cookieParser());
+// cookies and file middleware
+app.use(cookieParser());
 
-// app.use(morgan("tiny"));
+app.use(morgan("tiny"));
 
 
 // // import all routes here
