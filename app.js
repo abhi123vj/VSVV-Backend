@@ -11,9 +11,9 @@ const swaggerDocument = YAML.load("./swagger.yaml");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
-// // regular middleware
-// app.use(express.json());
-// app.use(express.urlencoded({extended: true}));
+// regular middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 // // cookies and file middleware
 // app.use(cookieParser());
