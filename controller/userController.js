@@ -1,5 +1,5 @@
 const User = require("../models/users");
-const BigPromise = require("../middlewares/bigpromise");
+const BigPromise = require("../middlewares/bigPromise");
 const CustomError = require("../utils/customErrors");
 const cookieToken = require("../utils/cookieToken");
 
