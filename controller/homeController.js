@@ -2,7 +2,7 @@ const BigPromise = require("../middlewares/bigPromise");
 const Bookdata = require("../models/book");
 const Issuedata = require("../models/issue");
 const Recorddata = require("../models/record");
-const CustomError = require("../utils/customErrors");
+//const CustomError = require("../utils/customErrors");
 
 // exports.getBookList = BigPromise(async (req, res,next) => {
 //     const books = await Bookdata.find({}, '-__v');;
