@@ -20,7 +20,6 @@ app.use(cookieParser());
 app.use(morgan("tiny"));
 
 
-res.status(200).json({sucess: true, greetings: "Hellow from dummy"});
 // import all routes here
 const home = require("./routes/home");
 const user = require("./routes/user");
