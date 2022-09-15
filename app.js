@@ -19,7 +19,9 @@ app.use(cookieParser());
 
 app.use(morgan("tiny"));
 
-
+app.get("/", (req, res, next) => {
+    res.json(["Tony","Lisa","Michael","Ginger","Food"]);
+   });
 // import all routes here
 const home = require("./routes/home");
 const user = require("./routes/user");
