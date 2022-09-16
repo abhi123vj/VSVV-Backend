@@ -31,7 +31,6 @@ const CustomError = require("../utils/customErrors");
 // exports.viewBook = BigPromise(async (req, res) => {
 //     const bookdata = await Bookdata.findById(req.params.id, '-__v');
 
-
 //     res.status(200).json({success: true, bookdata: bookdata});
 // })
 // exports.updateBook = BigPromise(async (req, res,next) => {
@@ -47,11 +46,13 @@ const CustomError = require("../utils/customErrors");
 //     res.status(200).json({success: true, bookdata: bookdata});
 // })
 
-exports.homeDummy = BigPromise(async(req, res) => {
-
-
-    res.status(200).json({sucess: true, greetings: "Hellow from dummy"});
-});
+// exports.homeDummy = BigPromise(async (req, res, next) => {
+//   res.status(200).json({ sucess: true, greetings: "Hellow from dummy" });
+// });
+exports.homeDummy = async (req, res, next) => {
+    res.status(200).json({ sucess: true, greetings: "Hellow from dummy" });
+  };
+  
 
 // exports.issueBook = BigPromise(async (req, res,next) => {
 //     const {bookID, issueUserID, issueDate} = req.body;
@@ -66,7 +67,7 @@ exports.homeDummy = BigPromise(async(req, res) => {
 //     const {returnDate, fineAmnt} = req.body;
 //     const issueCloseAdminID = req.user.id;
 //     const issueData = await Issuedata.findById(req.params.id, '-__v');
-    
+
 //     if (!issueData) {
 //       return next(
 //         new CustomError("issue not found", 400)
