@@ -47,11 +47,11 @@ const CustomError = require("../utils/customErrors");
 //     res.status(200).json({success: true, bookdata: bookdata});
 // })
 
-exports.homeDummy = (req, res) => {
+exports.homeDummy = BigPromise(async(req, res) => {
 
 
     res.status(200).json({sucess: true, greetings: "Hellow from dummy"});
-};
+});
 
 // exports.issueBook = BigPromise(async (req, res,next) => {
 //     const {bookID, issueUserID, issueDate} = req.body;
