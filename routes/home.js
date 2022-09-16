@@ -1,8 +1,8 @@
  const express = require("express");
 const {
-    //removeBook,
-   // viewBook,
-   // updateBook,
+    removeBook,
+   viewBook,
+   updateBook,
     homeDummy,
     // getBookList,
     // addBookList,
