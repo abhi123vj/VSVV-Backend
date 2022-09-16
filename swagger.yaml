@@ -1,11 +1,13 @@
 openapi: "3.0.0"
 info:
-  title: VSVV
-  description: library api
+  title: VSVV API
+  description: library managemnet API for VSVV 
   version: 1.1.0
   contact:
+    name: API Support
+    url: https://abh1ram.web.app
     email: 4bh1ram@gmail.com
-   
+
 
 # servers:
 #   - url: "https://localhost:4000/api/v1"
@@ -25,7 +27,7 @@ servers:
       url:
         enum:
           - localhost:4000
-          - lcotshirtstore.herokuapp.com
+          - vsvvv.herokuapp.com
         default: localhost:4000
       protocol:
         enum:
@@ -43,13 +45,15 @@ components:
       type: http
       scheme: bearer
 
+  
+
 
 paths:
-  /dummy:
+  /:
     get:
       tags:
-        - Home
-      summary: returns a greet message from LCO
+        - Dummy
+      summary: returns a Dummy Response
       responses:
         200:
           description: All good success
@@ -62,3 +66,124 @@ paths:
           description: Bad request
         500:
           description: internal server error
+  /login:
+    post:
+      tags:
+        - Authentication
+      summary: Creates a new user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: Auther@gmail.com
+                password:
+                  type: string
+                  example: Auther@1234
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjQzZDExOTlhMTIwM2ZhMzg1OTA4ZiIsImlhdCI6MTY2MzMxOTMxNSwiZXhwIjoxNjYzNTc4NTE1fQ.cycR54SAabRPsegxUHxYVewKVWta9x8agajnDiEcTHU
+                  user:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: Auther
+                      email:
+                        type: string
+                        example: Auther@1234
+                      role:
+                        type: string
+                        example: admin
+                      userId:
+                        type: string
+                        example: 63243d1199a1203fa385908f
+
+                    
+        400:
+          description: Bad request
+        500:
+          description: internal server error
+
+  /signup:
+      post:
+        tags:
+          - Authentication
+        summary: Login existing user.
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - name
+                  - email
+                  - password
+                properties:
+                  name:
+                    type: string
+                    example: Auther
+                    required: true
+                  email:
+                    type: string
+                    example: Auther@gmail.com
+                    required: true
+                  password:
+                    type: string
+                    example: Auther@1234
+                    required: true
+                  role:
+                    type: string
+                    example: admin
+        responses:
+          200:
+            description: successful operation
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    success:
+                      type: boolean
+                      example: true
+                    token:
+                      type: string
+                      example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjQzZDExOTlhMTIwM2ZhMzg1OTA4ZiIsImlhdCI6MTY2MzMxOTMxNSwiZXhwIjoxNjYzNTc4NTE1fQ.cycR54SAabRPsegxUHxYVewKVWta9x8agajnDiEcTHU
+                    user:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          example: Auther
+                        email:
+                          type: string
+                          example: Auther@1234
+                        role:
+                          type: string
+                          example: admin
+                        userId:
+                          type: string
+                          example: 63243d1199a1203fa385908f
+
+                      
+          400:
+            description: Bad request
+          500:
+            description: internal server error
+
