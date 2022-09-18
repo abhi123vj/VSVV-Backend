@@ -28,12 +28,12 @@ servers:
         enum:
           - localhost:4000
           - vsvvv.herokuapp.com
-        default: localhost:4000
+        default: vsvvv.herokuapp.com
       protocol:
         enum:
           - http
           - https
-        default: http
+        default: https
 
 components:
   securitySchemes:
