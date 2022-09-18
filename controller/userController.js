@@ -68,7 +68,7 @@ exports.login = BigPromise(async (req, res, next) => {
   }
 
   // get user from DB
-  const user = await User.findOne({ email }).select("+password");
+  const user = await User.findOne({ email }).select("+password -__v -createdAt");
 
   // if user not found in DB
   if (!user) {
