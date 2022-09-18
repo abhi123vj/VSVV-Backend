@@ -187,3 +187,43 @@ paths:
           500:
             description: internal server error
 
+  /dashboard:
+    get:
+      tags:
+        - General
+      summary: View all the books in the library.
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjQzZDExOTlhMTIwM2ZhMzg1OTA4ZiIsImlhdCI6MTY2MzMxOTMxNSwiZXhwIjoxNjYzNTc4NTE1fQ.cycR54SAabRPsegxUHxYVewKVWta9x8agajnDiEcTHU
+                  user:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: Auther
+                      email:
+                        type: string
+                        example: Auther@1234
+                      role:
+                        type: string
+                        example: admin
+                      userId:
+                        type: string
+                        example: 63243d1199a1203fa385908f
+
+                    
+        400:
+          description: Bad request
+        500:
+          description: internal server error
